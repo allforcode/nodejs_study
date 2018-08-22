@@ -60,12 +60,12 @@ app.get('/bad', (req, res) => {
     });
 });
 
-// app.post('/test', (req, res) => {
-//     res.send({
-//         code: '200',
-//         message: 'My own website'
-//     }}
-// );
+app.post('/test_post', (req, res) => {
+    res.send({
+        code: '200',
+        message: 'My own website'
+    }}
+);
 
 app.listen(port, () => {
     console.log(`Server is up on port ${port}`);
