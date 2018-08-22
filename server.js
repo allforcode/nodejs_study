@@ -2,11 +2,16 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+const bodyParser = require('body-parser');
+
 const port = process.env.PORT || 3000;
 var app = express();
 
 hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine', 'hbs');
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.use((req, res, next) => {
     var now = new Date().toString();
@@ -61,10 +66,17 @@ app.get('/bad', (req, res) => {
 });
 
 app.post('/test_post', (req, res) => {
-    res.json({
-        code: '200',
-        message: 'you got it'
-    });
+    // console.log('waiting for 5 secs');
+    // setTimeout(() => {
+        var job = req.body.job;
+        const jobKey = job[0].job_key;
+        const tjNumber = job[0].tj_number;
+        res.json({
+            code: '200',
+            message: `your job ${tjNumber} (${jobKey}) is completed`
+        });
+        res.end('yes');
+    // }, 5000);
 });
 
 app.listen(port, () => {
