@@ -60,6 +60,13 @@ app.get('/bad', (req, res) => {
     });
 });
 
+app.post('/test', () => {
+    res.send({
+        code: '200',
+        message: 'My own website'
+    }}
+);
+
 app.listen(port, () => {
     console.log(`Server is up on port ${port}`);
 });
