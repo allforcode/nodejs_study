@@ -63,9 +63,9 @@ app.get('/bad', (req, res) => {
 app.post('/test_post', (req, res) => {
     res.send({
         code: '200',
-        message: 'My own website'
-    }}
-);
+        message: 'You got it'
+    });
+});
 
 app.listen(port, () => {
     console.log(`Server is up on port ${port}`);
