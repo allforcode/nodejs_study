@@ -61,10 +61,10 @@ app.get('/bad', (req, res) => {
 });
 
 app.post('/test_post', (req, res) => {
-    // res.send({
-    //     code: '200',
-    //     message: 'You got it'
-    // });
+    res.json({
+        code: '200',
+        message: 'you got it'
+    });
 });
 
 app.listen(port, () => {
