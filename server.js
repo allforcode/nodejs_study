@@ -60,7 +60,7 @@ app.get('/bad', (req, res) => {
     });
 });
 
-app.post('/test', () => {
+app.post('/test', (req, res) => {
     res.send({
         code: '200',
         message: 'My own website'
