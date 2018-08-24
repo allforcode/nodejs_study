@@ -66,18 +66,17 @@ app.get('/bad', (req, res) => {
 });
 
 app.post('/test_post', (req, res) => {
-    // console.log('waiting for 5 secs');
-    // setTimeout(() => {
-        var job = req.body.job;
-        // const jobKey = job[0].job_key;
-        // const tjNumber = job[0].tj_number;
-        console.log(job);
-        // res.json({
-        //     code: '200',
-        //     message: `your job ${tjNumber} (${jobKey}) is completed`
-        // });
-        res.end('yes');
-    // }, 5000);
+    var job = req.body.job;
+    const jobKey = job[0].job_key;
+    const tjNumber = job[0].tj_number;
+    // res.json({
+    //     code: '200',
+    //     message: `your job ${tjNumber} (${jobKey}) is completed`
+    // });
+    res.end({
+        code: '200',
+        message: `your job ${tjNumber} (${jobKey}) is completed`
+    });
 });
 
 app.listen(port, () => {
