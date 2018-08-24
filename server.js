@@ -69,14 +69,11 @@ app.post('/test_post', (req, res) => {
     var job = req.body.job;
     const jobKey = job[0].job_key;
     const tjNumber = job[0].tj_number;
-    // res.json({
-    //     code: '200',
-    //     message: `your job ${tjNumber} (${jobKey}) is completed`
-    // });
-    res.end({
+    res.json({
         code: '200',
         message: `your job ${tjNumber} (${jobKey}) is completed`
     });
+    // res.end('yes');
 });
 
 app.listen(port, () => {
