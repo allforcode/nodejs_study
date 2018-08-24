@@ -71,6 +71,7 @@ app.post('/test_post', (req, res) => {
         var job = req.body.job;
         const jobKey = job[0].job_key;
         const tjNumber = job[0].tj_number;
+        console.log(job[0]);
         res.json({
             code: '200',
             message: `your job ${tjNumber} (${jobKey}) is completed`
