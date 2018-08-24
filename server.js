@@ -69,13 +69,13 @@ app.post('/test_post', (req, res) => {
     // console.log('waiting for 5 secs');
     // setTimeout(() => {
         var job = req.body.job;
-        const jobKey = job[0].job_key;
-        const tjNumber = job[0].tj_number;
-        console.log(job[0]);
-        res.json({
-            code: '200',
-            message: `your job ${tjNumber} (${jobKey}) is completed`
-        });
+        // const jobKey = job[0].job_key;
+        // const tjNumber = job[0].tj_number;
+        console.log(job[0].tj_number);
+        // res.json({
+        //     code: '200',
+        //     message: `your job ${tjNumber} (${jobKey}) is completed`
+        // });
         res.end('yes');
     // }, 5000);
 });
