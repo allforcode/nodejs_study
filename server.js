@@ -66,14 +66,21 @@ app.get('/bad', (req, res) => {
 });
 
 app.post('/test_post', (req, res) => {
-    var job = req.body.job;
-    const jobKey = job[0].job_key;
-    const tjNumber = job[0].tj_number;
+    // var job = req.body.job;
+    // const jobKey = job[0].job_key;
+    // const tjNumber = job[0].tj_number;
+    // res.json({
+    //     code: '200',
+    //     message: `your job ${tjNumber} (${jobKey}) is completed`
+    // });
+    // res.end('yes');
+    // var text = JSON.stringify(req, undefined, 2);
+    // res.stringify(text);
+    // res.end('yes');
     res.json({
         code: '200',
-        message: `your job ${tjNumber} (${jobKey}) is completed`
+        message: JSON.stringify(req.body)
     });
-    // res.end('yes');
 });
 
 app.listen(port, () => {
